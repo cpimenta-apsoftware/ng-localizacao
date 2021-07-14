@@ -42,9 +42,9 @@ testem.log
 Thumbs.db
 
 # Lock Packages Files
-yarn.lock
+#yarn.lock
 package-lock.json
-projects/ng-localizacao/yarn.lock
+#projects/ng-localizacao/yarn.lock
 projects/ng-localizacao/package-lock.json
 
 #README no assets
