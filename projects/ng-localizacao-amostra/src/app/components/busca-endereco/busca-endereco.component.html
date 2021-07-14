@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h2>Buscar Endereço</h2>
+
+  <p>
+    Não sabe o CEP? Tente o formulário abaixo.
+  </p>
+
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+      <input type="text" class="form-control full-width" [(ngModel)]="uf" placeholder="Digite a UF"
+        (keyup.enter)="buscarEndereco()" />
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+      <input type="text" class="form-control full-width" [(ngModel)]="municipio" placeholder="Digite o Município"
+        (keyup.enter)="buscarEndereco()" />
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+      <input type="text" class="form-control full-width" [(ngModel)]="logradouro" placeholder="Digite a Logradouro"
+        (keyup.enter)="buscarEndereco()" />
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+      <button class="btn btn-primary full-width" (click)="buscarEndereco()">Buscar</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="alert alert-danger" role="alert" *ngIf="error; else addr">
+      {{errorMessage}}
+    </div>
+    <ng-template #addr>
+      <app-lista-endereco *ngIf="enderecos" [enderecos]="enderecos"></app-lista-endereco>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,194 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "fc9221bb-a6af-415c-a89a-4f35055b31f7"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ng-localizacao": {
+      "projectType": "library",
+      "root": "projects/ng-localizacao",
+      "sourceRoot": "projects/ng-localizacao/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ng-localizacao/tsconfig.lib.json",
+            "project": "projects/ng-localizacao/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-localizacao/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-localizacao/src/test.ts",
+            "tsConfig": "projects/ng-localizacao/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-localizacao/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-localizacao/tsconfig.lib.json",
+              "projects/ng-localizacao/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ng-localizacao-amostra": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ng-localizacao-amostra",
+      "sourceRoot": "projects/ng-localizacao-amostra/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-localizacao-amostra",
+            "index": "projects/ng-localizacao-amostra/src/index.html",
+            "main": "projects/ng-localizacao-amostra/src/main.ts",
+            "polyfills": "projects/ng-localizacao-amostra/src/polyfills.ts",
+            "tsConfig": "projects/ng-localizacao-amostra/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ng-localizacao-amostra/src/favicon.ico",
+              "projects/ng-localizacao-amostra/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "projects/ng-localizacao-amostra/src/styles.scss",
+              "node_modules/prismjs/themes/prism-okaidia.css",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/marked/lib/marked.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js",
+              "node_modules/prismjs/components/prism-bash.js",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-localizacao-amostra/src/environments/environment.ts",
+                  "with": "projects/ng-localizacao-amostra/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-localizacao-amostra/src/environments/environment.ts",
+                  "with": "projects/ng-localizacao-amostra/src/environments/environment.staging.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-localizacao-amostra:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-localizacao-amostra:build:production"
+            },
+            "staging": {
+              "browserTarget": "ng-localizacao-amostra:build:staging"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-localizacao-amostra:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-localizacao-amostra/src/test.ts",
+            "polyfills": "projects/ng-localizacao-amostra/src/polyfills.ts",
+            "tsConfig": "projects/ng-localizacao-amostra/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-localizacao-amostra/karma.conf.js",
+            "assets": [
+              "projects/ng-localizacao-amostra/src/favicon.ico",
+              "projects/ng-localizacao-amostra/src/assets"
+            ],
+            "styles": [
+              "projects/ng-localizacao-amostra/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-localizacao-amostra/tsconfig.app.json",
+              "projects/ng-localizacao-amostra/tsconfig.spec.json",
+              "projects/ng-localizacao-amostra/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-localizacao-amostra/e2e/protractor.conf.js",
+            "devServerTarget": "ng-localizacao-amostra:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-localizacao-amostra:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng-localizacao"  
+}

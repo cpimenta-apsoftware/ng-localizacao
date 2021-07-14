@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ endereco.logradouro }}, {{ endereco.complemento }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      {{ endereco.bairro }} &middot; {{ endereco.cep }} &middot;
+      {{ endereco.cidade }}, {{ endereco.uf }}
+    </h6>
+    <h6>
+      Código IBGE:
+      <a href="{{endereco.linkIbge}}" target="_blank">{{ endereco.codigoIbge }}</a>
+    </h6>
+    <h6>
+      Geocódigo:
+      <a href="{{endereco.linkMapa}}" target="_blank">{{ endereco.latitude }}, {{ endereco.longitude }}</a>
+    </h6>
+  </div>
+</div>

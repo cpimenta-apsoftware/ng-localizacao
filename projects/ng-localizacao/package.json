@@ -1,0 +1,50 @@
+{
+  "name": "@apsoftwaresi/ng-localizacao",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apsoftwaresi/ng-localizacao.git"
+  },
+  "author": {
+    "name": "Caique Pimenta",
+    "email": "cpimenta.apsoftware@gmail.com"
+  },
+  "homepage": "https://apsoftwaresi.github.io/ng-localizacao/",
+  "keywords": [
+    "angular",
+    "viacep",
+    "buscar cep",
+    "cep brasil",
+    "endereços brasil",
+    "api cep",
+    "geolocalização",
+    "latitude",
+    "longitude",
+    "coordenada",
+    "openstreetmap",
+    "osm",
+    "mapbox",
+    "logradouro",
+    "bairro",
+    "cidade",
+    "uf",
+    "estado",
+    "ddd",
+    "município",
+    "código ibge",
+    "complemento",
+    "gia",
+    "siafi"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apsoftwaresi/ng-localizacao.git/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^11.2.5",
+    "@angular/core": "^11.2.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

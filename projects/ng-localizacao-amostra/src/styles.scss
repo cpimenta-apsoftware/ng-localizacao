@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+$primary-color: #ff3838;
+// $primary-color: #e75151;    
+$secondary-color: #24992e;
+// $secondary-color: rgb(55, 172, 20);
+$terciary-color: rgb(0, 0, 0);
+
+.app-navbar {
+  box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.5);
+  background-color: $primary-color;
+}
+
+.upper-gutter {
+  margin-top: 75px;  
+}
+
+body {
+  background-color: $terciary-color;
+  color: $secondary-color;
+}
+
+.btn-primary {
+  background-color: #ff3838;
+}
+
+// .navbar-brand {
+//   color: $terciary-color !important;  
+// }
+
+// .nav-link {
+//   color: $terciary-color !important;  
+// }
