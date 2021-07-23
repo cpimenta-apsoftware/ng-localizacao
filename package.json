@@ -67,7 +67,8 @@
     "page-build": "npm run config && ng build --prod --base-href \"https://apsoftwaresi.github.io/ng-localizacao/\"",
     "page-deploy": "ngh --no-silent --dir dist/ng-localizacao-amostra",
     "github-page": "npm run build:lib:prod && npm run page-build && npm run page-deploy",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "env:config": "cp .env.example .env"
   },
   "private": true,
   "dependencies": {

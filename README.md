@@ -18,6 +18,7 @@ Foi desenvolvida utilizando como base a biblioteca [ngx-viacep](https://github.c
 yarn:
 ```sh
 yarn
+yarn env:config
 yarn build
 yarn start
 ```
@@ -25,6 +26,7 @@ yarn start
 npm:
 ```sh
 npm i
+npm run env:config
 npm run build
 npm start
 ```
